@@ -59,10 +59,11 @@ export const getRollupOptions = (
 ): RollupOptions => {
   const nodeResolvePlugin = rollupNodeResolvePlugin({
     mainFields: ['collection:main', 'jsnext:main', 'es2017', 'es2015', 'module', 'main'],
-    browser: true,
+    browser: bundleOpts.platform !== 'hydrate',
     rootDir: config.rootDir,
-    ...(config.nodeResolve as any),
+    exportConditions: ['default', 'module', 'import', 'require'],
     extensions: ['.tsx', '.ts', '.mts', '.cts', '.js', '.mjs', '.cjs', '.json', '.d.ts', '.d.mts', '.d.cts'],
+    ...config.nodeResolve,
   });
 
   // @ts-expect-error - this is required now.
