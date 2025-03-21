@@ -187,6 +187,7 @@ export {
   getElement,
   getMode,
   getRenderingRef,
+  getTagTransformer,
   getValue,
   Host,
   insertVdomAnnotations,
@@ -198,5 +199,7 @@ export {
   setAssetPath,
   setMode,
   setNonce,
+  setTagTransformer,
   setValue,
+  transformTag,
 } from '@runtime';
