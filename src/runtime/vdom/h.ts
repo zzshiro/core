@@ -8,7 +8,7 @@
  */
 
 import { BUILD } from '@app-data';
-import { consoleDevError, consoleDevWarn, getTagTransformer,transformTag } from '@platform';
+import { consoleDevError, consoleDevWarn, getTagTransformer, transformTag } from '@platform';
 import { isComplexType } from '@utils';
 
 import type * as d from '../../declarations';
