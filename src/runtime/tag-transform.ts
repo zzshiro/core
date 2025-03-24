@@ -25,11 +25,3 @@ export function setTagTransformer(transformer: d.TagTransformer) {
   }
   tagTransformer = transformer;
 }
-
-/**
- * Gets the current tag transformer
- * @returns the current tag prefix
- */
-export function getTagTransformer() {
-  return tagTransformer;
-}

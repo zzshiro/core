@@ -386,9 +386,9 @@ export type TagTransformer = (tag: string) => string;
 /**
  * Sets a tag transformer to be used when rendering your custom elements.
  * ```ts
- * setTagTransformer((tag) => `new-${tag}`);
+ * setTagTransformer((tag) => if (tag.startsWith('my-')) `new-${tag}`);
  * ```
- * Will mean all your components are defined with a `new-` prefix.
+ * Will mean all your components that start with `my-` are defined instead with `new-my-` prefix.
  *
  * @param transformer the transformer function to use which must return a string.
  */
