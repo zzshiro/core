@@ -381,6 +381,27 @@ export declare function readTask(task: RafCallback): void;
  */
 export declare const setErrorHandler: (handler: ErrorHandler) => void;
 
+export type TagTransformer = (tag: string) => string;
+
+/**
+ * Sets a tag transformer to be used when rendering your custom elements.
+ * ```ts
+ * setTagTransformer((tag) => `new-${tag}`);
+ * ```
+ * Will mean all your components are defined with a `new-` prefix.
+ *
+ * @param transformer the transformer function to use which must return a string.
+ */
+export declare function setTagTransformer(transformer: TagTransformer): void;
+
+/**
+ * Transforms a tag name using a transformer set via `setTagTransformer`
+ *
+ * @param tag - the tag to transform e.g. `my-tag`
+ * @returns the transformed tag e.g. `new-my-tag`
+ */
+export declare function transformTag(tag: string): string;
+
 /**
  * This file gets copied to all distributions of stencil component collections.
  * - no imports

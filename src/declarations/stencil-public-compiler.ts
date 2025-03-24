@@ -2,7 +2,7 @@ import type { ConfigFlags } from '../cli/config-flags';
 import type { PrerenderUrlResults, PrintLine } from '../internal';
 import type { BuildCtx, CompilerCtx } from './stencil-private';
 import type { JsonDocs } from './stencil-public-docs';
-import type { ResolutionHandler } from './stencil-public-runtime';
+import type { ResolutionHandler, TagTransformer } from './stencil-public-runtime';
 
 export * from './stencil-public-docs';
 
@@ -984,6 +984,13 @@ export interface SerializeDocumentOptions extends HydrateDocumentOptions {
    * @see https://stenciljs.com/docs/styling#style-modes
    */
   modes?: ResolutionHandler[];
+
+  /**
+   * Sets the tag transformer to be used when rendering custom elements
+   * @param transformer the transformer function to use. Must return a string
+   * @returns the `tagTransformer` function
+   */
+  tagTransformer?: TagTransformer;
 }
 
 export interface HydrateFactoryOptions extends SerializeDocumentOptions {

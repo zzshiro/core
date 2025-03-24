@@ -1,6 +1,6 @@
-type TagTransformer = (tag: string) => string;
+import type * as d from '../declarations';
 
-let tagTransformer: TagTransformer | undefined = undefined;
+export let tagTransformer: d.TagTransformer | undefined = undefined;
 
 /**
  * Transforms a tag name using the current tag transformer
@@ -15,9 +15,8 @@ export function transformTag(tag: string): string {
 /**
  * Sets the tag transformer to be used when rendering custom elements
  * @param transformer the transformer function to use. Must return a string
- * @returns the `tagTransformer` function
  */
-export function setTagTransformer(transformer: TagTransformer) {
+export function setTagTransformer(transformer: d.TagTransformer) {
   if (tagTransformer) {
     console.warn(`
       A tagTransformer has already been set. 
@@ -25,7 +24,6 @@ export function setTagTransformer(transformer: TagTransformer) {
     `);
   }
   tagTransformer = transformer;
-  return tagTransformer;
 }
 
 /**
