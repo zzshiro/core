@@ -48,7 +48,7 @@ export const registerComponents = (Cstrs: d.ComponentNativeConstructor[]) => {
     // using this format so it follows exactly how client-side modules work
     const exportName = Cstr.cmpMeta.$tagName$;
     const transformedTagName = transformTag(exportName);
-    
+
     cmpModules.set(exportName, {
       [exportName]: Cstr,
     });
